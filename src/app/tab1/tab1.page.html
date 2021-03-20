@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Delis Comida
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <h4 style="text-align: center;">Productos</h4>
+    <ion-grid>
+      <ion-row style="background: rgb(23, 22, 109);">
+        <ion-col size="3">Nombre</ion-col>
+        <ion-col size="3">Categoria</ion-col>
+        <ion-col size="3">Descripcion</ion-col>
+        <ion-col size="1">$</ion-col>
+        <ion-col size="2">Editar</ion-col>
+      </ion-row>
+      <ion-row *ngFor="let prod of productService.producto">
+        <ion-col size="3">{{prod.nombre}}</ion-col>
+        <ion-col size="3">{{prod.categoria}}</ion-col>
+        <ion-col size="3">{{prod.descripcion}}</ion-col>
+        <ion-col size="1">{{prod.precio}}</ion-col>
+        <ion-col size="2"><ion-icon name="pencil-outline" size="large" ></ion-icon></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <br>
+    <!--
+  <ion-card>
+    <h4 style="text-align: center;">Usuarios</h4>
+    <ion-grid>
+      <ion-row style="background: rgb(23, 22, 109);">
+        <ion-col size="2">Nombre</ion-col>
+        <ion-col size="2">Apellidos</ion-col>
+        <ion-col size="2">Direccion</ion-col>
+        <ion-col size="2">Telefono</ion-col>
+        <ion-col size="2">Email</ion-col>
+        <ion-col size="2">Password</ion-col>
+      </ion-row>
+      <ion-row *ngFor="let user of userService.usuario">
+        <ion-col size="2">{{user.nombre}}</ion-col>
+        <ion-col size="2">{{user.apellido}}</ion-col>
+        <ion-col size="2">{{user.direccion}}</ion-col>
+        <ion-col size="2">{{user.telefono}}</ion-col>
+        <ion-col size="2">{{user.email}}</ion-col>
+        <ion-col size="2">{{user.password}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <br>-->
+  <ion-card *ngFor="let objeto of userService.objetos">
+    <ion-card-header>
+      <ion-card-subtitle>{{objeto.color}}</ion-card-subtitle>
+      <ion-card-title>{{objeto.nombre}}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+</ion-content>
